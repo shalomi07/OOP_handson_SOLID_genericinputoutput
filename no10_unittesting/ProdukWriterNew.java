@@ -20,22 +20,22 @@ class Produk<T, U, V> {
 
 public class ProdukWriterNew {
     public static void main(String[] args) {
-        List<DataItem<String, Double, Integer>> produkList = new ArrayList<>();
-        produkList.add(new DataItem<>("Laptop", 15000000.0, 5));
-        produkList.add(new DataItem<>("Mouse", 150000.0, 20));
-        produkList.add(new DataItem<>("Keyboard", 350000.0, 12));
+        List<Produk<String, Double, Integer>> produkList = new ArrayList<>();
+        produkList.add(new Produk<>("Laptop", 15000000.0, 5));
+        produkList.add(new Produk<>("Mouse", 150000.0, 20));
+        produkList.add(new Produk<>("Keyboard", 350000.0, 12));
 
-        List<DataItem<String, String, Boolean>> pelangganList = new ArrayList<>();
-        pelangganList.add(new DataItem<>("CUST-01", "Andi", true));
-        pelangganList.add(new DataItem<>("CUST-02", "Siti", false));
+        List<Produk<String, String, Boolean>> pelangganList = new ArrayList<>();
+        pelangganList.add(new Produk<>("CUST-01", "Andi", true));
+        pelangganList.add(new Produk<>("CUST-02", "Siti", false));
 
         Path filePath = Paths.get("produk_output.txt");
         try {
             List<String> lines = new ArrayList<>();
-            for (DataItem<String, Double, Integer> p : produkList) {
+            for (Produk<String, Double, Integer> p : produkList) {
                 lines.add(p.toString());
             }
-            for (DataItem<String, String, Boolean> c : pelangganList) {
+            for (Produk<String, String, Boolean> c : pelangganList) {
                 lines.add(c.toString());
             }
 
