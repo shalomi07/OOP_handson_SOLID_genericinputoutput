@@ -21,11 +21,10 @@ public class ReadWriteEmployee {
             return;
         }
 
-        // Membaca file dan menyimpan hasilnya ke ArrayList<String>
         try (BufferedReader br = Files.newBufferedReader(sourcePath, StandardCharsets.UTF_8)) {
             br.lines().forEach(line -> {
                 employeeList.add(line);
-                System.out.println(line); // Menampilkan ke konsol
+                System.out.println(line);
             });
         } catch (NoSuchFileException e) {
             System.out.println("File tidak ditemukan: " + e.getMessage());
@@ -35,7 +34,6 @@ public class ReadWriteEmployee {
             return;
         }
 
-        // Menuliskan isi ArrayList ke file baru copy_employees.txt
         try {
             Files.write(destPath, employeeList, StandardCharsets.UTF_8);
             System.out.println("\nBerhasil menyalin data ke " + destPath);
